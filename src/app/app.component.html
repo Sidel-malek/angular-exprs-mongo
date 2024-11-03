@@ -1,0 +1,36 @@
+<nav class="navbar navbar-light bg-light">
+  <form class="container-fluid ms-4">
+    <h2 class="mt-3">Liste des Etudiants</h2>
+      </form>
+</nav>
+
+<section class="mt-3">
+
+  <ol>
+
+    <li class=" ms-4 mb-2" *ngFor="let d of data ;  let i = index ">{{d.name}} | {{d.age}} 
+      <mat-icon class="ms-3" (click)="delete(d._id)">delete</mat-icon>
+      <mat-icon class="ms-3"  (click)="toggleEditForm(i, d._id)">edit</mat-icon>
+      <div *ngIf="editIndex === i ">
+        <form #fe="ngForm" (ngSubmit)="editStudent()"  class="row mt-3 mb-3">
+          <input type="text" class="col-2  " placeholder="New name" [(ngModel)]="newname" name="newname" />
+          <input type="text" class="col-2  ms-2 " placeholder="New age" [(ngModel)]="newage" name="newage" />
+          <button class="btn btn-sm btn-outline-success col-2  ms-5">edit User</button>
+        </form>
+      </div>
+    </li>
+
+  </ol>
+</section>
+<br>
+<br>
+<nav class="navbar navbar-light bg-light">
+  <form class="container-fluid ms-4">
+    <h2 class="mt-3">Ajouter Des Etudiants</h2>
+      </form>
+</nav>
+<form #f="ngForm" (ngSubmit)="addStudent()" novalidate class="row mt-3">
+  <input type="text" class="col-2 ms-5" placeholder="name" [(ngModel)]="name" name="name" />
+  <input type="text" class="col-2 ms-2" placeholder="age" [(ngModel)]="age" name="age" />
+  <button class="btn btn-outline-success col-2 ms-5">Add User</button>
+</form>
