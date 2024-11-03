@@ -1,27 +1,51 @@
-# MongoExpAngular
+# Gestion des Étudiants
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+application Angular permettant de gérer une liste d’étudiants, avec la possibilité d’ajouter, de modifier et de supprimer des informations. L’application se connecte à une API Node.js/MongoDB pour gérer la persistance des données des étudiants.
 
-## Development server
+## Fonctionnalités
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Affichage de la liste des étudiants** : Visualisez les noms et âges des étudiants enregistrés.
+- **Ajout d’un étudiant** : Ajoutez un nouvel étudiant avec un nom et un âge.
+- **Modification des informations d'un étudiant** : Mettez à jour le nom ou l’âge d’un étudiant existant.
+- **Suppression d’un étudiant** : Supprimez un étudiant de la liste.
 
-## Code scaffolding
+## Prérequis
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Node.js** et **npm** installés sur votre machine.
+- **Angular CLI** pour lancer l'application.
+- **Backend Node.js/MongoDB** opérationnel pour gérer les données (non inclus dans ce dépôt).
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 1. Cloner le dépôt
+```bash
+git clone https://github.com/Sidel-malek/angular-exprs-mongo.git
+```
+### 2. Accéder au dossier du projet
+### 3. Installer les dépendances
+```bash
+npm install
+```
+### 4. Lancer le serveur de développement : trouver dans dossier /serveur/serveur.js
 
-## Running unit tests
+```bash
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+L’application sera disponible dans votre navigateur à l’adresse `http://localhost:4200`.
 
-## Running end-to-end tests
+## API Backend
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Pour le bon fonctionnement de cette application, un backend Node.js avec une base de données MongoDB est requis pour gérer les données des étudiants. Assurez-vous que votre API backend est en cours d'exécution sur `http://localhost:3031` avec les routes suivantes :
 
-## Further help
+- **GET** `/etudiants` : Récupérer la liste des étudiants.
+- **POST** `/addAUser` : Ajouter un étudiant.
+- **DELETE** `/deleteUser/:id` : Supprimer un étudiant par son ID.
+- **PUT** `/student/:id` : Mettre à jour un étudiant par son ID.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Technologies Utilisées
+
+- **Angular** : Framework pour le frontend.
+- **Bootstrap** : Pour le style et la mise en page.
+- **Material Icons** : Pour les icônes (supprimer, modifier).
+- **Node.js** et **MongoDB** : Pour le backend et la base de données (non inclus dans ce dépôt).
